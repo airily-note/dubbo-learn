@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @EnableDubbo
+@SpringBootApplication
 @EnableDubboConfiguration
 @DubboComponentScan("com.favorv.dubbo.provider.common.impl")
 public class ProviderApplication {
