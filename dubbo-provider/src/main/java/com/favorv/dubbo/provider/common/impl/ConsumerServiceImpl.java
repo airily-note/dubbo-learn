@@ -1,10 +1,11 @@
 package com.favorv.dubbo.provider.common.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.favorv.dubbo.common.UserService;
+import com.favorv.dubbo.common.ConsumerService;
 import org.springframework.stereotype.Component;
 
 /**
+ * 消费者接口实现
  * @author lql
  * @see Component 交给SpringIOC管理
  * @set Service 别导错包是com.alibaba.dubbo.config.annotation.Service
@@ -16,14 +17,14 @@ import org.springframework.stereotype.Component;
  * </p>
  */
 @Component
-@Service(timeout = 10000,interfaceClass = UserService.class)
-public class UserServiceImpl implements UserService {
+@Service(timeout = 10000,interfaceClass = ConsumerService.class)
+public class ConsumerServiceImpl implements ConsumerService {
     @Override
     public String getUserById(int id) {
         if(id == 1) {
-            return "SimpleWu";
+            return "消费者调用生产者接口服务1";
         }else {
-            return "Apache Dubbo";
+            return "消费者调用生产者接口服务2";
         }
     }
 }
