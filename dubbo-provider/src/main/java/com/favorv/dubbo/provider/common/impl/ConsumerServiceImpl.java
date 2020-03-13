@@ -1,7 +1,7 @@
 package com.favorv.dubbo.provider.common.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.favorv.dubbo.common.ConsumerService;
+import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  * </p>
  */
 @Component
-@Service(timeout = 10000,interfaceClass = ConsumerService.class)
+@Service(version = "1.0.0", timeout = 10000, interfaceClass = ConsumerService.class)
 public class ConsumerServiceImpl implements ConsumerService {
     @Override
     public String getUserById(int id) {
